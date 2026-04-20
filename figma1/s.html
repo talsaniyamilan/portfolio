@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadoo · travel & enjoy</title>
+  <!-- fonts & icons (kept as before) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #181E4B;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
+    /* ----- header / navigation ----- */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #181E4B;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.8rem;
+      font-weight: 500;
+      color: #212832;
+      flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+      cursor: pointer;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+.nav-menu a{
+ text-decoration: none;
+      color: #212832;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;}
+    .nav-menu li:hover {
+      color: #DF6951;
+    }
+
+    .auth {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+
+    .auth a {
+      text-decoration: none;
+      color: #212832;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .auth a:hover {
+      color: #DF6951;
+    }
+
+    .signup {
+      border: 1px solid #DF6951;
+      border-radius: 30px;
+      padding: 0.4rem 1.2rem !important;
+      color: #DF6951 !important;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .signup:hover {
+      background-color: #DF6951;
+      color: #ffffff !important;
+    }
+
+    /* ----- hero section ----- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem 4rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+    }
+
+    .hero-text h5 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #DF6951;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #181E4B;
+      margin-bottom: 1.5rem;
+      max-width: 12ch;
+    }
+
+    .hero-text p {
+      color: #5E6282;
+      font-size: 1rem;
+      max-width: 45ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: #F1A501;
+      border: none;
+      border-radius: 10px;
+      padding: 1rem 2.2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      box-shadow: 0 20px 25px -10px rgba(241, 165, 1, 0.35);
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .btn-primary:hover {
+      background-color: #d88f01;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #686D77;
+      cursor: pointer;
+    }
+
+    .btn-outline i {
+      background-color: #DF6951;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: 0 10px 18px -5px #df695180;
+    }
+
+    .hero-graphic {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #FFF7E6, #FFEDD9);
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      min-height: 380px;
+      aspect-ratio: 1/1;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 35px 50px -20px rgba(223, 105, 81, 0.25);
+    }
+
+    /* ----- services section ----- */
+    .services-section {
+      max-width: 1300px;
+      width: 100%;
+      border-radius: 2.5rem;
+      padding: 3.5rem 2.5rem;
+    }
+
+    .category-tag {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #df6951;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #181e4b;
+      margin-bottom: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-shadow: 0 18px 30px -10px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 40px -15px rgba(223, 105, 81, 0.2);
+    }
+
+    .service-card .imgs {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 1.8rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e1e2f;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #5e6282;
+      line-height: 1.6;
+    }
+
+    /* ----- destinations (top selling) ----- */
+    .travel-card-section {
+      width: 100%;
+    }
+
+    .top-selling-label {
+      font-size: 0.85rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #4a6f8a;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .destinations-heading {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #1c2c3c;
+      margin-bottom: 2.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-top: 2.2rem;
+    }
+
+    .destination-card {
+      border-radius: 2.2rem;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 18px 30px -8px rgba(19, 31, 41, 0.12);
+      transition: all 0.25s ease;
+      background: white;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .destination-card .img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .card-main-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.9rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #1e2f3f;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #1b2b39;
+      background: #f0f7fc;
+      padding: 0.2rem 0.9rem;
+      border-radius: 60px;
+      white-space: nowrap;
+    }
+
+    .duration-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #43657b;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding-top: 0.9rem;
+      border-top: 1px dashed #cbdae6;
+    }
+
+    /* ----- dashboard / steps + trip card ----- */
+    .dashboard {
+      max-width: 1280px;
+      width: 100%;
+      margin: 100px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .easy-tag {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #3b71fe;
+      margin-bottom: 0.75rem;
+    }
+
+    .left-panel h2 {
+      font-size: 2.2rem;
+      max-width: 500px;
+    }
+
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .step-icon img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .step-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-content p {
+      font-size: 0.95rem;
+      color: #5b687c;
+      max-width: 380px;
+    }
+
+    .card {
+      background: #ffffff;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 20px 30px -10px rgba(0, 20, 30, 0.12);
+      padding: 1.75rem 1.5rem;
+    }
+
+    .trip-item .imgs {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      margin-bottom: 1rem;
+    }
+
+    /* ----- testimonials section ----- */
+    .testimonials {
+      width: 100%;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 3rem;
+      align-items: start;
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #2b6f9e;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .main-heading {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #0b1c2f;
+      margin-bottom: 2.2rem;
+    }
+
+    .big-quote {
+      background: #f8fafd;
+      border-radius: 28px;
+      padding: 2.2rem 2rem 2rem 2rem;
+      border: 1px solid #eef2f7;
+      margin-top: 2rem;
+    }
+
+    .quote-text {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #1f3b4f;
+      padding-left: 1.5rem;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(145deg, #cedcec, #b0c6db);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #1f3b4f;
+    }
+
+    .author-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #102a3c;
+    }
+
+    .author-location {
+      font-size: 0.95rem;
+      color: #5f788c;
+    }
+
+    .brands {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .brands img {
+      max-width: 140px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    /* ----- footer / subscribe ----- */
+    .card-footer {
+      margin-top: 100px;
+    }
+
+    .subscribe-section {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .subscribe-section p {
+      font-size: 1.1rem;
+      color: #5e6282;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 380px;
+      max-width: 100%;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b0b7cf;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: none;
+      border-radius: 50px;
+      background: #f4f6fa;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .subscribe-btn {
+      background: linear-gradient(135deg, #ff946d, #ff7e5f);
+      border: none;
+      border-radius: 50px;
+      padding: 1rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
+      gap: 2rem 1rem;
+      margin-bottom: 2.5rem;
+      align-items: start;
+    }
+
+    .brand-col h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #181e4b;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-col .tagline {
+      font-size: 0.95rem;
+      color: #5e6282;
+      max-width: 210px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #080e30;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      color: #5e6282;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: #df6951;
+    }
+
+    .app-discovery {
+      margin-top: 1.8rem;
+    }
+
+    .app-discovery p {
+      font-weight: 700;
+      color: #080e30;
+      margin-bottom: 0.8rem;
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-dummy {
+      background: #0b1a33;
+      color: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-dummy.apple {
+      background: #1c1c1e;
+    }
+
+    .badge-dummy.google {
+      background: #1d3d5c;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.8rem;
+      border-top: 2px solid #f0f2f7;
+      color: #825e74;
+      font-weight: 500;
+      gap: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social-links a {
+      color: #8a96b5;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+
+    .a {
+      background-color: #96ec0a;
+      border-radius: 30px;
+      /* padding-bottom: 50px; */
+      margin-bottom: 20px;
+      padding: 15px;
+
+      text-decoration: none;
+
+    }
+
+    .social-links a:hover {
+      color: #df6951;
+    }
+
+    /* ========== RESPONSIVE MEDIA QUERIES ========== */
+    @media screen and (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards-grid {
+        gap: 1.2rem;
+      }
+
+      .destinations-heading {
+        font-size: 2.3rem;
+      }
+
+      .hero {
+        gap: 2rem;
+      }
+
+      .dashboard {
+        gap: 1.8rem;
+      }
+
+      .footer-grid {
+        gap: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 880px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn-group {
+        justify-content: center;
+      }
+
+      .hero-graphic {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .main-heading {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media screen and (max-width: 776px) {
+      .container {
+        padding: 1rem 1.5rem;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+      }
+
+      .nav-menu {
+        gap: 1rem 1.5rem;
+      }
+
+      .auth {
+        gap: 1rem;
+      }
+
+      .services-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+        place-items: center;
+      }
+
+      .left-panel {
+        width: 100%;
+      }
+
+      .card {
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .brand-col {
+        grid-column: span 2;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text h5 {
+        font-size: 1rem;
+      }
+
+      .hero-graphic {
+        min-height: 300px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .service-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .subscribe-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .input-wrapper {
+        width: 100%;
+      }
+
+      .subscribe-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .brand-col {
+        grid-column: span 1;
+      }
+
+      .brand-col .tagline {
+        margin: 0 auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .app-badges {
+        justify-content: center;
+      }
+
+      .brands {
+        gap: 20px;
+      }
+
+      .brands img {
+        max-width: 100px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-graphic {
+        min-height: 250px;
+      }
+
+      .destinations-heading {
+        font-size: 1.8rem;
+      }
+
+      .location {
+        font-size: 1.1rem;
+      }
+
+      .price {
+        font-size: 1.2rem;
+      }
+
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .step-content p {
+        max-width: 100%;
+      }
+
+      .big-quote {
+        padding: 1.5rem 1rem;
+      }
+
+      .quote-text {
+        font-size: 1rem;
+        padding-left: 0.5rem;
+      }
+
+      .author {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- header -->
+    <div class="header">
+      <div class="logo">Jadoo</div>
+      <div class="nav-right">
+        <!-- <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resume">resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>  -->
+
+        <ul class="nav-menu">
+          <li>
+            <a href="#destinations">Hestinations</a>
+          </li>
+          <li>
+            <a href="#hotels">Hotels</a>
+          </li>
+          <li>
+            <a href="#Flights">Flights</a>
+          </li>
+          <li>
+
+            <a href="#bookings">Bookings</a>
+          </li>
+        </ul>
+        <div class="auth">
+          <a href="#Login">Login</a>
+          <a href="#signup" class="signup">Sign up</a>
+          <a href="#en">EN <i class="fas fa-chevron-down"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <section id="destinations" class="hero-section">
+
+      <div class="hero">
+        <div class="hero-text">
+          <h5>BEST DESTINATIONS AROUND THE WORLD</h5>
+          <h1>Travel, enjoy and live a new and full life</h1>
+          <p>Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening.
+            Park gate sell they west hard for the.</p>
+          <div class="btn-group">
+            <button class="btn-primary">Find out more</button>
+            <button class="btn-outline"><i class="fas fa-play"></i> Play Demo</button>
+          </div>
+        </div>
+        <div class="hero-graphic">
+          <img class="img"
+            src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf58e87917dc7a61ec_woman-planes.png"
+            alt="">
+        </div>
+      </div>
+    </section>
+
+      <!-- services -->
+      <section id="hotels">
+
+        <div class="services-section">
+          <div class="category-tag">CATEGORY</div>
+          <h2>We Offer Best Services</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <img class="imgs"
+                src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf8befd5647f6ee006_calculated-weather.svg"
+                alt="">
+              <h3>Calculated Weather</h3>
+              <p>Built Wicket longer<br>Engrossed listening.</p>
+            </div>
+            <div class="service-card">
+              <img class="imgs"
+                src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617b4ffef312fc9c2c00637b_best-flights.svg"
+                alt="">
+              <h3>Best Flights</h3>
+              <p>Barton vanity itself do<br>We deliver outsourced</p>
+            </div>
+            <div class="service-card">
+              <img class="imgs"
+                src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617b5305a737275d341ee519_local-events.png"
+                alt="">
+              <h3>Local Events</h3>
+              <p>admire do barton<br>Park gate sell they</p>
+            </div>
+            <div class="service-card">
+              <img class="imgs"
+                src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf4df7bb609a9a5f21_customization.svg"
+                alt="">
+              <h3>Customization</h3>
+              <p>in it.Preferd to men it<br>aviation services for</p>
+            </div>
+          </div>
+          </div>
+      </section>
+
+          <!-- top destinations -->
+          <section id="Flights">
+            <div class="travel-card-section">
+              <div class="top-selling-label">Top Selling</div>
+              <h2 class="destinations-heading">Top Destinations</h2>
+              <div class="cards-grid">
+                <div class="destination-card">
+                  <img class="img"
+                    src="https://media.istockphoto.com/id/539115110/photo/colosseum-in-rome-and-morning-sun-italy.jpg?s=612x612&w=0&k=20&c=9NtFxHI3P2IBWRY9t0NrfPZPR4iusHmVLbXg2Cjv9Fs="
+                    alt="">
+                  <div class="card-main-row">
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> Rome, Italy</span>
+                    <span class="price">$5,42k</span>
+                  </div>
+                  <div class="duration-row"><i class="far fa-calendar-alt"></i> 10 Days Trip</div>
+                </div>
+                <div class="destination-card">
+                  <img class="img"
+                    src="https://aboutmurals.ca/wp-content/uploads/2021/06/London-Wallpaper-About-Murals.jpg" alt="">
+                  <div class="card-main-row">
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> London, UK</span>
+                    <span class="price">$4.2k</span>
+                  </div>
+                  <div class="duration-row"><i class="far fa-calendar-alt"></i> 12 Days Trip</div>
+                </div>
+                <div class="destination-card">
+                  <img class="img"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwIMytJaD4BkIvRJty7D5vPOcKC3F-7_FCMQ&s"
+                    alt="">
+                  <div class="card-main-row">
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> Full Europe</span>
+                    <span class="price">$15k</span>
+                  </div>
+                  <div class="duration-row"><i class="far fa-calendar-alt"></i> 28 Days Trip</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            <!-- dashboard steps + trip -->
+            <section id="bookings">
+
+              <div class="dashboard">
+                <div class="left-panel">
+                  <div class="easy-tag">Easy and Fast</div>
+                  <h2>Book Your Next Trip<br>In 3 Easy Steps</h2>
+                  <div class="steps-container">
+                    <div class="step">
+                      <div class="step-icon"><img
+                          src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938d08573df8aa0b825af_icon-chosedestination.svg"
+                          alt=""></div>
+                      <div class="step-content">
+                        <h3>Choose Destination</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="step-icon"><img
+                          src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cec00b4023cfe65e13_icon-makepayment.svg"
+                          alt=""></div>
+                      <div class="step-content">
+                        <h3>Make Payment</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <div class="step-icon"><img
+                          src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cfc00b4049bee65e26_icon-reachairport.svg"
+                          alt=""></div>
+                      <div class="step-content">
+                        <h3>Reach Airport on Selected Date</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="trip-item">
+                    <img class="imgs"
+                      src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/618103548b0c7818deb95002_trip-to-greece.png"
+                      alt="">
+                  </div>
+                </div>
+              </div>
+            </section>
+
+              <!-- testimonials -->
+
+              <section id="Login" class="testimonials">
+                <div class="testimonials-grid">
+                  <div class="left-heading">
+                    <div class="eyebrow">TESTIMONIALS</div>
+                    <div class="main-heading">What People Say<br>About Us.</div>
+                  </div>
+                  <div class="big-quote">
+                    <div class="quote-text">On the Windows talking painted pasture yet its express parties use. Sure
+                      last upon
+                      he same as knew next. Of believed or diverted no.</div>
+                    <div class="author">
+                      <div class="author-avatar">MT</div>
+                      <div class="author-details"><span class="author-name">Mike taylor</span><span
+                          class="author-location">Lahore, Pakistan</span></div>
+                    </div>
+                    <div class="author">
+                      <div class="author-avatar">CT</div>
+                      <div class="author-details"><span class="author-name">Chris thomas</span><span
+                          class="author-location">CEO
+                          of Red Button</span></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- brands -->
+               <section id="signup">signup
+              <div class="brands">
+                <img
+                  src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf9e2702befb6cd457_logo-avon.png">
+                <img
+                  src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938d05c891c4cf1ca713a_logo-jetstar.png">
+                <img
+                  src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf9f94ee62add0ce04_logo-expedia.png">
+                <img
+                  src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938cf9ff2818825438ce4_logo-qantas.png">
+                <img
+                  src="https://cdn.prod.website-files.com/6170700f1a1db6b3a0ac16ed/617938d04df7bbb8e49a5f22_logo-alitalia.png">
+              </div>
+              </section>
+
+              <!-- footer -->
+               <section id="en">En
+              <div class="card-footer">
+                <div class="subscribe-section">
+                  <p>Subscribe to get information, latest news and other interesting offers about Jadoo</p>
+                  <div class="subscribe-form">
+                    <div class="input-wrapper"><i class="far fa-envelope"></i><input type="email"
+                        placeholder="Your email">
+                    </div>
+                    <button class="subscribe-btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+                  </div>
+                </div>
+                <div class="footer-grid">
+                  <div class="brand-col">
+                    <h1>Jadoo.</h1>
+                    <div class="tagline">Book your trip in minute, get full Control for much longer.</div>
+                  </div>
+                  <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Careers</a></li>
+                      <li><a href="#">Mobile</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                      <li><a href="#">Help/FAQ</a></li>
+                      <li><a href="#">Press</a></li>
+                      <li><a href="#">Affiliates</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col more-col">
+                    <h4>More</h4>
+                    <ul>
+                      <li><a href="#">Airlinefees</a></li>
+                      <li><a href="#">Airline</a></li>
+                      <li><a href="#">Low fare tips</a></li>
+                    </ul>
+                    <div class="app-discovery">
+                      <p>Discover our app</p>
+                      <div> <a
+                          href="https://www.apple.com/in/store?afid=p240%7Cgo~cmp-11141176048~adg-112258962227~ad-799103666857_kwd-12522920~dev-c~ext-~prd-~mca-~nt-search&cid=aos-in-kwgo-txt-brand-brand--"><span
+                            class="badge-dummy apple"><i class="fab fa-apple"></i> Apple Store</span></a>
+                        <a href="https://play.google.com/store/games?hl=en_IN"><span class="badge-dummy google"><i
+                              class="fab fa-google-play"></i> play store</span> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  <div class="social-links"> <a href="https://www.linkedin.com/in/talsaniya-milan-4786a03a8/"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/talsaniyamilan/project"><i class="fa-brands fa-github"></i></a>
+                  </div>
+                  <div class="copyright">© 2026 Jadoo. All rights reserved.
+                  </div>
+                  <a class="a" href="https://freewebsitetemplates.com/"><i class="fas fa-external-link-alt"></i> Visit
+                    Website</a>
+                </div>
+              </div>
+               </section>
+        </div>
+        
+  </div>
+
+
+</body>
+
+</html>
